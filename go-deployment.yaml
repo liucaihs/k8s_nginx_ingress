@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: awesome-project
+  labels:
+    app: awesome-project
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: awesome-project
+  template:
+    metadata:
+      labels:
+        app: awesome-project
+    spec:
+      containers:
+        - name: awesome-project
+          image: haocaige/awesome-project:v0.0.2
